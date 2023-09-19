@@ -6,11 +6,9 @@ const Cart = (props) => {
   const cartItems = [
     { id: "c1", name: "Chebyreki", amount: 3, price: 8.95 },
   ].map((item) => <li>{item.name}</li>);
-
-  const [isModalVisible, setIsModalVisible] = useState(true);
-
+  debugger;
   return (
-    <Modal isModalVisible={isModalVisible}>
+    <Modal hideCartHandler={props.hideCartHandler}>
       <ul className={classes["cart-items"]}>{cartItems}</ul>
       <div className={classes.total}>
         <span>Total Amount</span>
@@ -19,7 +17,7 @@ const Cart = (props) => {
       <div className={classes.actions}>
         <button
           className={classes["button--alt"]}
-          onClick={() => setIsModalVisible(false)}
+          onClick={props.hideCartHandler}
         >
           Close
         </button>
