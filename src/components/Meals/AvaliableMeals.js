@@ -32,7 +32,7 @@ const DUMMY_MEALS = [
 
 const AvaliableMeals = (props) => {
   const mealsList = DUMMY_MEALS.map((meal) => (
-    <MealItem meal={meal}></MealItem>
+    <MealItem meal={meal} key={meal.id}></MealItem>
   ));
   return (
     <section className={styles.meals}>
